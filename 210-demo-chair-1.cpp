@@ -64,12 +64,14 @@ int main() {
     cout << fixed << setprecision(2);
     srand(time(0)); // seed for random number
 
+    cout << "=======DEFAULT-CONSTRUCTED CHAIR=======\n";
     //creating pointer to first chair object
     Chair *chairPtr = new Chair;
     //chairPtr->setLegs(4);
     //chairPtr->setPrices(121.21, 232.32, 414.14);
     chairPtr->print();
 
+    cout << "\n======PARAMETER-CONSTRUCTED CHAIR======\n";
     //creating dynamic chair object with constructor
     // makr an double array to pass into the constructor
     double prices[] = {525.25, 434.34, 252.52};
@@ -79,6 +81,7 @@ int main() {
     delete livingChair;
     livingChair = nullptr;
 
+    cout << "\n==ARRAY OF DEFAULT-CONSTRUCTED CHAIRS==\n";
     //creating dynamic array of chair objects
     Chair *collection = new Chair[SIZE];
     /*
