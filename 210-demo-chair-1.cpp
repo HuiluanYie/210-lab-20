@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 const int SIZE = 3;
@@ -16,12 +17,16 @@ public:
     // constructors
     Chair() {
         prices = new double[SIZE];
+
         // randomly select 3 or 4 legs
         int n = rand() % 2;
-
-        legs = 0;
+        legs = (n == 0) ? 3:4;
+        
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+        {
+            // randomly select price
+            prices[i] = rand() % (P_MAX - P_MIN + 1) + P_MIN;
+        }
     }
     Chair(int l) {
         prices = new double[SIZE];
