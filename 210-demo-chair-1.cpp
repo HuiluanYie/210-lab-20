@@ -30,7 +30,7 @@ public:
         }
     }
 
-    Chair(int l, double p[]) {
+    Chair(int l, double * p) {
         prices = p;
         legs = l;
     }
@@ -72,8 +72,9 @@ int main() {
 
     //creating dynamic chair object with constructor
     // makr an double array to pass into the constructor
-    double [] prices
-    Chair *livingChair = new Chair(3, );
+    double * prices = new double[SIZE];
+    prices = [525.25, 434.34, 252.52];
+    Chair *livingChair = new Chair(3, prices);
     //livingChair->setPrices(525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
