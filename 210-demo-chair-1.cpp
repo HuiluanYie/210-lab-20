@@ -10,8 +10,9 @@ const int SIZE = 3;
 const int MIN = 10000, MAX = 99999;
 
 class Chair {
-    private: int legs;
-    double * prices;
+    private: 
+        int legs;
+        double * prices;
     public:
         // constructors
         Chair() {
@@ -31,6 +32,10 @@ class Chair {
     Chair(int l, double p[]) {
         prices = p;
         legs = l;
+    }
+
+    ~Chair() {
+        delete[] prices;
     }
 
     // setters and getters
@@ -72,6 +77,8 @@ int main() {
     //creating pointer to first chair object
     Chair * chairPtr = new Chair;
     chairPtr -> print();
+    delete chairPtr;
+    chairPtr = nullptr;
 
     cout << "\n======PARAMETER-CONSTRUCTED CHAIR======\n";
     //creating dynamic chair object with constructor
