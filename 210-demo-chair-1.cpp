@@ -29,11 +29,10 @@ public:
             prices[i] = price;
         }
     }
-    Chair(int l) {
-        prices = new double[SIZE];
+
+    Chair(int l, double p[]) {
+        prices = p;
         legs = l;
-        for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
     }
 
     // setters and getters
@@ -67,13 +66,15 @@ int main() {
 
     //creating pointer to first chair object
     Chair *chairPtr = new Chair;
-    chairPtr->setLegs(4);
-    chairPtr->setPrices(121.21, 232.32, 414.14);
+    //chairPtr->setLegs(4);
+    //chairPtr->setPrices(121.21, 232.32, 414.14);
     chairPtr->print();
 
     //creating dynamic chair object with constructor
-    Chair *livingChair = new Chair(3);
-    livingChair->setPrices(525.25, 434.34, 252.52);
+    // makr an double array to pass into the constructor
+    double [] prices
+    Chair *livingChair = new Chair(3, );
+    //livingChair->setPrices(525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
     livingChair = nullptr;
