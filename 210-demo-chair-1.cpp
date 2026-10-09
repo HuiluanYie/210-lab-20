@@ -2,9 +2,11 @@
 
 #include <iostream>
 #include <iomanip>
+#include <ctime>
 
 using namespace std;
 const int SIZE = 3;
+const double P_MIN = 100.00, P_MAX = 999.99;
 
 class Chair {
 private:
@@ -14,6 +16,9 @@ public:
     // constructors
     Chair() {
         prices = new double[SIZE];
+        // randomly select 3 or 4 legs
+        int n = rand() % 2;
+
         legs = 0;
         for (int i = 0; i < SIZE; i++)
             prices[i] = 0;
@@ -52,6 +57,7 @@ public:
 
 int main() {
     cout << fixed << setprecision(2);
+    srand(time(0)); // seed for random number
 
     //creating pointer to first chair object
     Chair *chairPtr = new Chair;
