@@ -7,7 +7,7 @@
 
 using namespace std;
 const int SIZE = 3;
-const double P_MIN = 100.00, P_MAX = 999.99;
+const int MIN = 10000, MAX = 99999;
 
 class Chair {
 private:
@@ -25,7 +25,8 @@ public:
         for (int i = 0; i < SIZE; i++)
         {
             // randomly select price
-            prices[i] = rand() % (P_MAX - P_MIN + 1) + P_MIN;
+            double price = (rand() % (MAX-MIN+1) + MIN) / (double) 100;
+            prices[i] = price;
         }
     }
     Chair(int l) {
